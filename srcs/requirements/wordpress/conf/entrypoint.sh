@@ -1,0 +1,23 @@
+#!/bin/bash
+
+wp config create    --path='/var/www/wordpress' --allow-root \
+                    --dbname=$SQL_DATABASE \
+                    --dbuser=$SQL_USER \
+                    --dbpass=$SQL_PASSWORD \
+                    --dbhost=mariadb:3306
+
+wp core install     --path=/var/www/wordpress --allow-root \
+                    --url=https://arincon.42.fr \
+                    --title=Inception \
+                    --admin_user=$WP_ADMIN_USER \
+                    --admin_password=$WP_ADMIN_PASSWORD \
+                    --admin_email=rincon_adriano@yahoo.com \
+                    --skip-email
+
+
+wp user create  --path=/var/www/wordpress --allow-root \
+                $WP_USER_LOGIN \
+                $WP_USER_EMAIL \
+                --user_pass=$WP_USER_PASSWORD
+
+exec /usr/sbin/php-fpm7.3 -F

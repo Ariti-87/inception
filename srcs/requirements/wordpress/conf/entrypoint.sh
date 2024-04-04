@@ -8,10 +8,10 @@ wp config create    --path='/var/www/wordpress' --allow-root \
 
 wp core install     --path=/var/www/wordpress --allow-root \
                     --url=https://arincon.42.fr \
-                    --title=Inception \
+                    --title=$WP_TITLE \
                     --admin_user=$WP_ADMIN_USER \
                     --admin_password=$WP_ADMIN_PASSWORD \
-                    --admin_email=rincon_adriano@yahoo.com \
+                    --admin_email=$WP_ADMIN_EMAIL \
                     --skip-email
 
 

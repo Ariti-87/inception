@@ -25,3 +25,5 @@
 # Exec
 .nfs*
 
+# Password
+.env

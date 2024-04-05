@@ -10,10 +10,10 @@ RUN     mkdir -p /var/run/nginx
 COPY    conf/nginx.conf /etc/nginx/nginx.conf
 #This is often necessary to allow the web server to access and 
 #serve files in this directory
-RUN     chmod 755 /var/www/html
+# RUN     chmod 755 /var/www/wordpress
 #Changes the owner and group of the /var/www/html directory to www-data.
 #This is crucial for security and functionality, as Nginx runs as the www-data user,
 #and it needs the necessary permissions to read, write, and execute files in this directory
-RUN     chown -R www-data:www-data /var/www/html
+# RUN     chown -R www-data:www-data /var/www/wordpress
 EXPOSE  443
 CMD     [ "nginx", "-g", "daemon off;" ]

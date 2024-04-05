@@ -7,7 +7,8 @@ wp config create    --path='/var/www/wordpress' --allow-root \
                     --dbhost=mariadb:3306
 
 wp core install     --path=/var/www/wordpress --allow-root \
-                    --url=https://arincon.42.fr \
+#                    --url=https://arincon.42.fr \
+                    --url=https://localhost \
                     --title=$WP_TITLE \
                     --admin_user=$WP_ADMIN_USER \
                     --admin_password=$WP_ADMIN_PASSWORD \
@@ -20,4 +21,5 @@ wp user create  --path=/var/www/wordpress --allow-root \
                 $WP_USER_EMAIL \
                 --user_pass=$WP_USER_PASSWORD
 
-exec /usr/sbin/php-fpm7.3 -F
+
+exec /usr/sbin/php-fpm7.4 -F

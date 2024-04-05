@@ -35,10 +35,10 @@ fclean: clean
 #	RM IMAGES
 	-docker rmi -f $(IMAGES)  
 #	RM CONTAINERS
-	-docker rm -f $(CONTAINERS)
+#	-docker rm -f $(CONTAINERS)
 #	RM VOLUMES
 	-docker volume rm $(VOLUMES)
 #	RM NETWORKS
-	-docker network rm $(NETWORKS)
+#	-docker network rm $(NETWORKS)
 
 re: fclean compose
